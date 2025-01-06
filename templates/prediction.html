@@ -46,10 +46,11 @@
   </div>
 </section>
 
+{% if lyrics or genre %}
 <section class="section section-lg bg-default">
   <div class="container">
     <div class="row row-50">
-      <div class="col-lg-10 col-xl-8">
+      <div class="col-lg-10 col-xl-11">
         <h3>Result</h3>
         <!--Quote Primary-->
         <article class="quote-primary">
@@ -67,7 +68,7 @@
           </div>
         </article>
       </div>
-      <div class="col-lg-10 col-xl-8">
+      <div class="col-lg-10 col-xl-11">
         <!--Quote Primary-->
         <article class="quote-primary">
           <div class="quote-primary-body">
@@ -84,7 +85,7 @@
           </div>
         </article>
       </div>
-      <div class="col-lg-10 col-xl-8">
+      <div class="col-lg-10 col-xl-11">
         <!--Quote Primary-->
         <article class="quote-primary">
           <div class="quote-primary-body">
@@ -104,4 +105,4 @@
     </div>
   </div>
 </section>
-{% endblock %}
+{% endif %}{% endblock %}
