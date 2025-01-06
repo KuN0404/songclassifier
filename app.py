@@ -28,20 +28,20 @@ def about():
     return render_template('about.html')
 
 
-# @app.route('/test', methods=['GET', 'POST'])
-# def index():
-#     genre = None
-#     lyrics = None
-#     cleaned_lyrics = None
+@app.route('/prediction', methods=['GET', 'POST'])
+def prediction():
+    genre = None
+    lyrics = None
+    cleaned_lyrics = None
 
-#     if request.method == 'POST':
-#         # Mengambil input lirik dari form
-#         lyrics = request.form['lyrics']
-#         cleaned_lyrics = clean_lyrics(lyrics)  # Filterisasi lirik
-#         prediction = model.predict([cleaned_lyrics])  # Prediksi genre
-#         genre = prediction[0]  # Ambil hasil prediksi pertama
+    if request.method == 'POST':
+        # Mengambil input lirik dari form
+        lyrics = request.form['lyrics']
+        cleaned_lyrics = clean_lyrics(lyrics)  # Filterisasi lirik
+        prediction = model.predict([cleaned_lyrics])  # Prediksi genre
+        genre = prediction[0]  # Ambil hasil prediksi pertama
 
-#     return render_template('index.html', genre=genre, lyrics=lyrics, clean_lyrics=cleaned_lyrics)
+    return render_template('prediction.html', genre=genre, lyrics=lyrics, clean_lyrics=cleaned_lyrics)
 
 if __name__ == '__main__':
     app.run(debug=True)

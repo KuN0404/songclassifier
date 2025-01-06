@@ -1,0 +1,107 @@
+{% extends 'base.html' %} {% block title %}SongClassifier | Prediction {% endblock %} {% block content %}
+<section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/bg-breadcrumbs-01-1920x480.jpg)">
+  <div class="container">
+    <h2 class="breadcrumbs-custom-title">Prediction</h2>
+  </div>
+  <ul class="breadcrumbs-custom-path">
+    <li><a href="index.html">Home</a></li>
+    <li class="active">Prediction</li>
+  </ul>
+</section>
+<section class="section section-md bg-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <h3>Prediction details</h3>
+        <p class="text-gray-600">On this page you can find all necessary contacts to get in touch with me if you would like to collaborate, book a live event or ask a question.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Mailform-->
+<section class="section section-lg bg-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <h3>Get in touch with me</h3>
+        <p class="text-gray-600">Feel free to drop a line or ask a question using the contact form below.</p>
+      </div>
+    </div>
+    <form class="rd-form text-left" method="POST" action="{{ url_for('prediction') }}">
+      <div class="row row-40">
+        <div class="col-lg-12">
+          <div class="form-wrap">
+            <label class="form-label" for="lyrics">Lyrics</label>
+            <textarea class="form-input" id="lyrics" name="lyrics" required>{{ lyrics or '' }}</textarea>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-wrap">
+            <button class="button button-primary" type="submit">Predict</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section section-lg bg-default">
+  <div class="container">
+    <div class="row row-50">
+      <div class="col-lg-10 col-xl-8">
+        <h3>Result</h3>
+        <!--Quote Primary-->
+        <article class="quote-primary">
+          <div class="quote-primary-body">
+            <svg class="quote-primary-mark" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="15px" viewbox="0 0 21 15" overflow="scroll" xml:space="preserve" preserveAspectRatio="none">
+              <path
+                d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
+            </svg>
+            {% if lyrics %}
+            <div class="quote-primary-text">
+              <h4>Input Lyrics:</h4>
+              <p class="q">{{ lyrics }}</p>
+            </div>
+            {% endif %}
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-10 col-xl-8">
+        <!--Quote Primary-->
+        <article class="quote-primary">
+          <div class="quote-primary-body">
+            <svg class="quote-primary-mark" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="15px" viewbox="0 0 21 15" overflow="scroll" xml:space="preserve" preserveAspectRatio="none">
+              <path
+                d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
+            </svg>
+            {% if lyrics %}
+            <div class="quote-primary-text">
+              <h4>Cleaned Lyrics:</h4>
+              <p class="q">{{ clean_lyrics }}</p>
+            </div>
+            {% endif %}
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-10 col-xl-8">
+        <!--Quote Primary-->
+        <article class="quote-primary">
+          <div class="quote-primary-body">
+            <svg class="quote-primary-mark" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="15px" viewbox="0 0 21 15" overflow="scroll" xml:space="preserve" preserveAspectRatio="none">
+              <path
+                d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
+            </svg>
+            {% if genre %}
+            <div class="quote-primary-text">
+              <h4>Prediction Result:</h4>
+              <h3 class="q"><strong>Genre:</strong> {{ genre }}</h3>
+            </div>
+            {% endif %}
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
