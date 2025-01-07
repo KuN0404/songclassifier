@@ -107,7 +107,10 @@
         </div>
         <div class="tab-pane fade" id="tabs-2-5">
           <div class="entry-video embed-responsive embed-responsive-16by9">
-            <iframe width="886" height="668" src="//www.youtube.com/embed/N1DEOCUujUg" allowfullscreen=""></iframe>
+            <video width="886" height="668" controls>
+              <source src="{{ url_for('static', filename='videos/beautiful-girls.mp4') }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
@@ -142,7 +145,7 @@
                       <div class="nav-video">
                         <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-03-140x81.jpg') }}" alt="" width="140" height="40"/>
                         </figure>
-                        <h6 class="nav-video-title">RnB</h6>
+                        <h6 class="nav-video-title">RnB | Beautiful Girls - Sean Kingston</h6>
                       </div></a></li>
         </ul>
       </div>
