@@ -10,9 +10,9 @@
         <div class="container">
           <div class="row justify-content-lg-center">
             <div class="col-lg-8">
-              <h5 data-caption-animate="fadeInUp" data-caption-delay="100">It’s not just love for music</h5>
-              <h1 data-caption-animate="fadeInUp" data-caption-delay="200">It’s My Passion</h1>
-              <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a class="button button-modern button-custom-size-1" href="#">see all events</a></div>
+              <h5 data-caption-animate="fadeInUp" data-caption-delay="100">Music brings joy to our hearts</h5>
+              <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Music</h1>
+              <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a class="button button-modern button-custom-size-1" href="{{ url_for('prediction') }}">Predict</a></div>
             </div>
           </div>
         </div>
@@ -23,9 +23,9 @@
         <div class="container">
           <div class="row justify-content-lg-center">
             <div class="col-lg-8">
-              <h5 data-caption-animate="fadeInUp" data-caption-delay="100">I make music to feel & enjoy</h5>
-              <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Your #1 DJ</h1>
-              <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a class="button button-modern button-custom-size-1" href="#">see all events</a></div>
+              <h5 data-caption-animate="fadeInUp" data-caption-delay="100">Songs connect people through emotions</h5>
+              <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Songs</h1>
+              <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a class="button button-modern button-custom-size-1" href="{{ url_for('prediction') }}">Predict</a></div>
             </div>
           </div>
         </div>
@@ -36,9 +36,9 @@
         <div class="container">
           <div class="row justify-content-lg-center">
             <div class="col-lg-8">
-              <h5 data-caption-animate="fadeInUp" data-caption-delay="100">I introduce new style of djing</h5>
-              <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Top DJing Skills</h1>
-              <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a class="button button-modern button-custom-size-1" href="#">see all events</a></div>
+              <h5 data-caption-animate="fadeInUp" data-caption-delay="100">Lyrics express feelings beyond words.</h5>
+              <h1 data-caption-animate="fadeInUp" data-caption-delay="200">Lyrics</h1>
+              <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="300"><a class="button button-modern button-custom-size-1" href="{{ url_for('prediction') }}">Predict</a></div>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
   <div class="swiper-pagination"></div>
 </section>
 
-<section class="parallax-container section-lg text-center" data-parallax-img="{{ url_for('static', filename='images/bg-home1-01-1920x1000.jpg') }}">
+<!-- <section class="parallax-container section-lg text-center" data-parallax-img="{{ url_for('static', filename='images/bg-home1-01-1920x1000.jpg') }}">
   <div class="parallax-content">
     <div class="container">
       <h6 class="text-gray-600">Trident Festival in Duchonka, slovakia - June 26, 2019</h6>
@@ -57,13 +57,13 @@
       <div class="row justify-content-center">
         <div class="col-lg-11">
           <div class="post-event">
-            <div class="countdown" data-type="until" data-time="17 Aug 2019 00:00"></div><img src="{{ url_for('static', filename='images/events-02-571x313.jpg') }}" alt="" width="571" height="156"/><a class="button button-primary button-lg" href="#">buy tickets</a>
+            <div class="countdown" data-type="until" data-time="01 Jan 2025 00:00"></div><img src="{{ url_for('static', filename='images/events-02-571x313.jpg') }}" alt="" width="571" height="156"/><a class="button button-primary button-lg" href="#">buy tickets</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="section section-lg bg-default text-center">
   <div class="container">
@@ -75,22 +75,34 @@
       <div class="tab-content">
         <div class="tab-pane fade show active" id="tabs-2-1">
           <div class="entry-video embed-responsive embed-responsive-16by9">
-            <iframe width="886" height="668" src="//www.youtube.com/embed/fJ9rUzIMcZQ" allowfullscreen=""></iframe>
+            <video width="886" height="668" controls>
+              <source src="{{ url_for('static', filename='videos/november-rain.mp4') }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
         <div class="tab-pane fade" id="tabs-2-2">
           <div class="entry-video embed-responsive embed-responsive-16by9">
-            <iframe width="886" height="668" src="//www.youtube.com/embed/mfMR-URQl80" allowfullscreen=""></iframe>
+            <video width="886" height="668" controls>
+              <source src="{{ url_for('static', filename='videos/my-way.mp4') }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
         <div class="tab-pane fade" id="tabs-2-3">
           <div class="entry-video embed-responsive embed-responsive-16by9">
-            <iframe width="886" height="668" src="//www.youtube.com/embed/xweHsBLcqp4" allowfullscreen=""></iframe>
+            <video width="886" height="668" controls>
+              <source src="{{ url_for('static', filename='videos/just-the-two-of-us.mp4') }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
         <div class="tab-pane fade" id="tabs-2-4">
           <div class="entry-video embed-responsive embed-responsive-16by9">
-            <iframe width="886" height="668" src="//www.youtube.com/embed/V3pPMUmIxAc" allowfullscreen=""></iframe>
+            <video width="886" height="668" controls>
+              <source src="{{ url_for('static', filename='videos/take-me-home-country-roads.mp4') }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
         <div class="tab-pane fade" id="tabs-2-5">
@@ -106,32 +118,32 @@
               <div class="nav-video">
                 <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-01-140x81.jpg') }}" alt="" width="140" height="40"/>
                 </figure>
-                <h6 class="nav-video-title">Rock</h6>
+                <h6 class="nav-video-title">Rock | November Rain - Guns N' Roses</h6>
               </div></a></li>
           <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-2" data-toggle="tab">
               <div class="nav-video">
                 <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-02-140x81.jpg') }}" alt="" width="140" height="40"/>
                 </figure>
-                <h6 class="nav-video-title">Juicy M - Live at MEO Sudoeste Festival</h6>
+                <h6 class="nav-video-title">Pop | My Way - Frank Sinatra </h6>
               </div></a></li>
-          <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-3" data-toggle="tab">
-              <div class="nav-video">
-                <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-03-140x81.jpg') }}" alt="" width="140" height="40"/>
-                </figure>
-                <h6 class="nav-video-title">Armin van Buuren feat. Angel Taylor - Make It Right</h6>
-              </div></a></li>
-          <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-4" data-toggle="tab">
-              <div class="nav-video">
-                <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-04-140x81.jpg') }}" alt="" width="140" height="40"/>
-                </figure>
-                <h6 class="nav-video-title">Armin Only crew taking over Sydney! Armin Only VLOG</h6>
-              </div></a></li>
-          <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-5" data-toggle="tab">
-              <div class="nav-video">
-                <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-05-140x81.jpg') }}" alt="" width="140" height="40"/>
-                </figure>
-                <h6 class="nav-video-title">Armin Only crew taking over San Francisco!</h6>
-              </div></a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-3" data-toggle="tab">
+                <div class="nav-video">
+                  <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-04-140x81.jpg') }}" alt="" width="140" height="40"/>
+                  </figure>
+                  <h6 class="nav-video-title">Jazz | Just the Two of Us - Grover Washington Jr.</h6>
+                </div></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-4" data-toggle="tab">
+                  <div class="nav-video">
+                    <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-05-140x81.jpg') }}" alt="" width="140" height="40"/>
+                    </figure>
+                    <h6 class="nav-video-title">Country | Take Me Home, Country Road - John Denver</h6>
+                  </div></a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-5" data-toggle="tab">
+                      <div class="nav-video">
+                        <figure class="nav-video-figure"><img src="{{ url_for('static', filename='images/video-03-140x81.jpg') }}" alt="" width="140" height="40"/>
+                        </figure>
+                        <h6 class="nav-video-title">RnB</h6>
+                      </div></a></li>
         </ul>
       </div>
     </div>

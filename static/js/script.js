@@ -1590,51 +1590,113 @@
 		}
 
 		// TimeCircles
-		if (plugins.dateCountdown.length) {
-			for ( var i = 0; i < plugins.dateCountdown.length; i++ ) {
-				var
-					dateCountdownItem = $( plugins.dateCountdown[ i ] ),
-					countdownRender = function () {
-						dateCountdownItem.TimeCircles( {
-							time: { Seconds: { show: !( window.innerWidth < 768 ), } }
-						} ).rebuild();
-					};
+		// if (plugins.dateCountdown.length) {
+		// 	for ( var i = 0; i < plugins.dateCountdown.length; i++ ) {
+		// 		var
+		// 			dateCountdownItem = $( plugins.dateCountdown[ i ] ),
+		// 			countdownRender = function () {
+		// 				dateCountdownItem.TimeCircles( {
+		// 					time: { Seconds: { show: !( window.innerWidth < 768 ), } }
+		// 				} ).rebuild();
+		// 			};
 
-				dateCountdownItem.TimeCircles( {
-					color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "rgba(247, 247, 247, 1)",
-					animation: "smooth",
-					bg_width: dateCountdownItem.attr( "data-bg-width" ) ? dateCountdownItem.attr( "data-bg-width" ) : 0.6,
-					circle_bg_color: dateCountdownItem.attr( "data-bg" ) ? dateCountdownItem.attr( "data-bg" ) : "rgba(0, 0, 0, 1)",
-					fg_width: dateCountdownItem.attr( "data-width" ) ? dateCountdownItem.attr( "data-width" ) : 0.03,
-					time: {
-						Days: {
-							text: "Days",
-							show: true,
-							color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "#f9f9f9"
-						},
-						Hours: {
-							text: "Hours",
-							show: true,
-							color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "#f9f9f9"
-						},
-						Minutes: {
-							text: "Minutes",
-							show: true,
-							color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "#f9f9f9"
-						},
-						Seconds: {
-							text: "Seconds",
-							show: false,
-							color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "#f9f9f9"
-						}
-					}
-				} );
+		// 		dateCountdownItem.TimeCircles( {
+		// 			color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "rgba(247, 247, 247, 1)",
+		// 			animation: "smooth",
+		// 			bg_width: dateCountdownItem.attr( "data-bg-width" ) ? dateCountdownItem.attr( "data-bg-width" ) : 0.6,
+		// 			circle_bg_color: dateCountdownItem.attr( "data-bg" ) ? dateCountdownItem.attr( "data-bg" ) : "rgba(0, 0, 0, 1)",
+		// 			fg_width: dateCountdownItem.attr( "data-width" ) ? dateCountdownItem.attr( "data-width" ) : 0.03,
+		// 			time: {
+		// 				Days: {
+		// 					text: "Days",
+		// 					show: true,
+		// 					color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "#f9f9f9"
+		// 				},
+		// 				Hours: {
+		// 					text: "Hours",
+		// 					show: true,
+		// 					color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "#f9f9f9"
+		// 				},
+		// 				Minutes: {
+		// 					text: "Minutes",
+		// 					show: true,
+		// 					color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "#f9f9f9"
+		// 				},
+		// 				Seconds: {
+		// 					text: "Seconds",
+		// 					show: false,
+		// 					color: dateCountdownItem.attr( "data-color" ) ? dateCountdownItem.attr( "data-color" ) : "#f9f9f9"
+		// 				}
+		// 			}
+		// 		} );
 
-				countdownRender();
-				window.addEventListener( 'resize', countdownRender );
-			}
-		}
+		// 		countdownRender();
+		// 		window.addEventListener( 'resize', countdownRender );
+		// 	}
+		// }
 
+// TimeCircles
+if (plugins.dateCountdown.length) {
+    for (var i = 0; i < plugins.dateCountdown.length; i++) {
+        var
+            dateCountdownItem = $( plugins.dateCountdown[i] ),
+            countdownRender = function () {
+                dateCountdownItem.TimeCircles({
+                    time: {
+                        Seconds: { show: !(window.innerWidth < 768) },
+                    }
+                }).rebuild();
+            };
+
+        // Get the target time and current time
+        var targetTime = new Date(dateCountdownItem.attr("data-time"));
+        var currentTime = new Date();
+
+        // Calculate the time difference
+        var timeDifference = targetTime - currentTime;
+
+        // Set the countdown to count up if the target time is in the future
+        if (timeDifference > 0) {
+            dateCountdownItem.TimeCircles({
+                color: dateCountdownItem.attr("data-color") ? dateCountdownItem.attr("data-color") : "rgba(247, 247, 247, 1)",
+                animation: "smooth",
+                bg_width: dateCountdownItem.attr("data-bg-width") ? dateCountdownItem.attr("data-bg-width") : 0.6,
+                circle_bg_color: dateCountdownItem.attr("data-bg") ? dateCountdownItem.attr("data-bg") : "rgba(0, 0, 0, 1)",
+                fg_width: dateCountdownItem.attr("data-width") ? dateCountdownItem.attr("data-width") : 0.03,
+                time: {
+                    Days: {
+                        text: "Days",
+                        show: true,
+                        color: dateCountdownItem.attr("data-color") ? dateCountdownItem.attr("data-color") : "#f9f9f9"
+                    },
+                    Hours: {
+                        text: "Hours",
+                        show: true,
+                        color: dateCountdownItem.attr("data-color") ? dateCountdownItem.attr("data-color") : "#f9f9f9"
+                    },
+                    Minutes: {
+                        text: "Minutes",
+                        show: true,
+                        color: dateCountdownItem.attr("data-color") ? dateCountdownItem.attr("data-color") : "#f9f9f9"
+                    },
+                    Seconds: {
+                        text: "Seconds",
+                        show: true, // Show seconds
+                        color: dateCountdownItem.attr("data-color") ? dateCountdownItem.attr("data-color") : "#f9f9f9"
+                    }
+                }
+            });
+
+            // Set the countdown to count up
+            dateCountdownItem.TimeCircles().start();
+        }
+
+        countdownRender();
+        window.addEventListener('resize', countdownRender);
+    }
+}
+
+		
 		// JQuery mousewheel plugin
 		if (plugins.scroller.length) {
 			for (var i = 0; i < plugins.scroller.length; i++) {
