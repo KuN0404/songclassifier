@@ -1,290 +1,315 @@
-{% extends 'base.html' %}
-
-{% block title %}SongClassifier | About {% endblock %}
-
-{% block content %}
-      <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/bg-breadcrumbs-02-1920x480.jpg);">
-        <div class="container">
-          <h2 class="breadcrumbs-custom-title">About</h2>
+{% extends 'base.html' %} {% block title %}SongClassifier | About {% endblock %} {% block content %}
+<!-- Breadcrumbs-->
+<section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images/bg-breadcrumbs-02-1920x480.jpg)">
+  <div class="container">
+    <h2 class="breadcrumbs-custom-title">About</h2>
+  </div>
+  <ul class="breadcrumbs-custom-path">
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li class="active">About</li>
+  </ul>
+</section>
+<section class="section section-lg bg-default">
+  <div class="container">
+    <div class="row row-50 flex-md-row-reverse">
+      <div class="col-md-6 text-center">
+        <div class="box-image-1"><img src="{{ url_for('static', filename='images/banner4.jfif') }}" alt="" width="468" height="276" /></div>
+      </div>
+      <div class="col-md-6">
+        <div class="box-about">
+          <div class="box-about-title-wrap">
+            <h2 class="box-about-mega-title">jenius garden</h2>
+            <h2 class="box-about-title">about music</h2>
+          </div>
+          <h4 class="box-about-post-title">music history</h4>
+          <p>
+            Music history dates back to ancient times when early humans used rhythm and sound to communicate. Over the centuries, different cultures developed distinct musical styles, with instruments like drums and stringed instruments
+            emerging. The evolution of music continued with the rise of classical compositions in the 17th and 18th centuries, followed by the birth of modern genres like jazz, rock, and electronic music.
+          </p>
+          <p>
+            In the 20th century, popular music exploded with the advent of radio, records, and the internet. Genres like rock, pop, and hip-hop became mainstream, while electronic dance music (EDM) rose to global prominence in the late
+            1990s and early 2000s. Today, music is a universal language, continuously evolving with technological advances and cultural influences.
+          </p>
+          <a class="button button-primary" href="{{ url_for('prediction') }}">Predict</a>
         </div>
-        <ul class="breadcrumbs-custom-path">
-          <li><a href="{{ url_for('index') }}">Home</a></li>
-          <li class="active">About</li>
-        </ul>
-      </section>
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <div class="row row-50 flex-md-row-reverse">
-            <div class="col-md-6 text-center">
-              <div class="box-image-1"><img src="{{ url_for('static', filename='images/banner4.jfif') }}" alt="" width="468" height="276"/>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="box-about">
-                <div class="box-about-title-wrap">
-                  <h2 class="box-about-mega-title">jenius garden</h2>
-                  <h2 class="box-about-title">about music</h2>
-                </div>
-                <h4 class="box-about-post-title">music history</h4>
-                <p>Music history dates back to ancient times when early humans used rhythm and sound to communicate. Over the centuries, different cultures developed distinct musical styles, with instruments like drums and stringed instruments emerging. The evolution of music continued with the rise of classical compositions in the 17th and 18th centuries, followed by the birth of modern genres like jazz, rock, and electronic music.</p>
-                <p>In the 20th century, popular music exploded with the advent of radio, records, and the internet. Genres like rock, pop, and hip-hop became mainstream, while electronic dance music (EDM) rose to global prominence in the late 1990s and early 2000s. Today, music is a universal language, continuously evolving with technological advances and cultural influences.</p>
-                <a class="button button-primary" href="{{ url_for('prediction') }}">Predict</a>
-              </div>
-            </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section-lg-3 bg-default">
+  <!-- Owl Carousel-->
+  <div
+    class="owl-carousel owl-carousel-bio"
+    data-items="1"
+    data-sm-items="1"
+    data-md-items="2"
+    data-lg-items="2"
+    data-xl-items="3"
+    data-xxl-items="4"
+    data-autoplay="false"
+    data-nav="true"
+    data-dots="true"
+    data-loop="true"
+    data-mouse-drag="false"
+    data-stage-padding="0"
+    data-margin="0"
+    data-nav-text='["prev","next"]'>
+    <div class="box-bio">
+      <div class="box-bio-year">1980</div>
+      <div class="box-bio-body">
+        <h5 class="box-bio-title">ROCK</h5>
+        <p class="box-bio-text">Bands like U2, Queen, and Guns N' Roses brought rock to the peak of popularity.</p>
+      </div>
+    </div>
+    <div class="box-bio">
+      <div class="box-bio-year">1990</div>
+      <div class="box-bio-body">
+        <h5 class="box-bio-title">Grunge</h5>
+        <p class="box-bio-text">Popularized by Nirvana, Pearl Jam, and Soundgarden, grunge became an iconic genre in the early 90s.</p>
+      </div>
+    </div>
+    <div class="box-bio">
+      <div class="box-bio-year">2000</div>
+      <div class="box-bio-body">
+        <h5 class="box-bio-title">R&B</h5>
+        <p class="box-bio-text">Usher, Alicia Keys, and Beyoncé became R&B icons with their hit songs.</p>
+      </div>
+    </div>
+    <div class="box-bio">
+      <div class="box-bio-year">2010</div>
+      <div class="box-bio-body">
+        <h5 class="box-bio-title">Electronic Dance Music (EDM)</h5>
+        <p class="box-bio-text">DJs like Calvin Harris, Avicii, and Martin Garrix brought EDM to global popularity.</p>
+      </div>
+    </div>
+    <div class="box-bio">
+      <div class="box-bio-year">2020</div>
+      <div class="box-bio-body">
+        <h5 class="box-bio-title">Pop</h5>
+        <p class="box-bio-text">Artists like Billie Eilish, Ariana Grande, and Harry Styles continue to dominate the music industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section-lg bg-default">
+  <div class="container">
+    <div class="row row-75 flex-lg-row-reverse">
+      <div class="col-lg-6 text-center">
+        <div class="box-image-2"><img src="{{ url_for('static', filename='images/music-disc.gif') }}" alt="" width="420" height="210" /></div>
+      </div>
+      <div class="col-lg-6">
+        <h2>Change & Evolve</h2>
+        <!--Bootstrap tabs-->
+        <div class="tabs-albums" id="tabs-1">
+          <!--Nav tabs-->
+          <div class="tabs-albums-select">
+            <h6 class="text-gray-600">Genre</h6>
+            <ul class="nav nav-tabs">
+              <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1" data-toggle="tab">Rock</a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">Pop</a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-toggle="tab">Jazz</a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-4" data-toggle="tab">RnB</a></li>
+            </ul>
           </div>
-        </div>
-      </section>
-      <section class="section section-lg-3 bg-default">
-        <!-- Owl Carousel-->
-        <div class="owl-carousel owl-carousel-bio" data-items="1" data-sm-items="1" data-md-items="2" data-lg-items="2" data-xl-items="3" data-xxl-items="4" data-autoplay="false" data-nav="true" data-dots="true" data-loop="true" data-mouse-drag="false" data-stage-padding="0" data-margin="0" data-nav-text="[&quot;prev&quot;,&quot;next&quot;]">
-          <div class="box-bio">
-            <div class="box-bio-year">1980</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">ROCK</h5>
-              <p class="box-bio-text">Bands like U2, Queen, and Guns N' Roses brought rock to the peak of popularity.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">1990</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Grunge</h5>
-              <p class="box-bio-text">Popularized by Nirvana, Pearl Jam, and Soundgarden, grunge became an iconic genre in the early 90s.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2000</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">R&B</h5>
-              <p class="box-bio-text">Usher, Alicia Keys, and Beyoncé became R&B icons with their hit songs.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2010</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Electronic Dance Music (EDM)</h5>
-              <p class="box-bio-text">DJs like Calvin Harris, Avicii, and Martin Garrix brought EDM to global popularity.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2020</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Pop</h5>
-              <p class="box-bio-text">Artists like Billie Eilish, Ariana Grande, and Harry Styles continue to dominate the music industry.</p>
-            </div>
-          </div>
-     
-        </div>
-      </section>
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <div class="row row-75 flex-lg-row-reverse">
-            <div class="col-lg-6 text-center">
-              <div class="box-image-2"><img src="{{ url_for('static', filename='images/banner5.jpg') }}" alt="" width="428" height="214"/>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h2>Change & Evolve</h2>
-              <!--Bootstrap tabs-->
-              <div class="tabs-albums" id="tabs-1">
-                <!--Nav tabs-->
-                <div class="tabs-albums-select">
-                  <h6 class="text-gray-600">Genre</h6>
-                  <ul class="nav nav-tabs">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1" data-toggle="tab">Rock</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">Pop</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-toggle="tab">Jazz</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-4" data-toggle="tab">RnB</a></li>
+          <!--Tab panes-->
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tabs-1-1">
+              <div class="jp-modern jp-player-init">
+                <div class="jp-jplayer"></div>
+                <div class="jp-audio jp-audio-0" role="application" aria-label="media player">
+                  <ul class="jp-player-list">
+                    <li class="jp-player-list-item" data-jp-title="Lost Souls" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Outer Spirits" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Oldskool" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Reasons Why" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Inside Me" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Stars (feat. iTops)" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Hills of Truth" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Carelessness" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Into the Future" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
                   </ul>
+                  <div class="jp-modern-interface">
+                    <div class="jp-button jp-playpaus-button">
+                      <button class="jp-btn jp-play" tabindex="0"></button>
+                    </div>
+                    <div class="jp-time-rail">
+                      <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                          <div class="jp-play-bar"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="jp-current-time"></div>
+                    <div class="jp-button jp-volume-button">
+                      <button class="jp-btn jp-mute" tabindex="0">max volume</button>
+                    </div>
+                  </div>
+                  <div class="jp-playlist">
+                    <ul class="jp-playlist-inner">
+                      <li></li>
+                    </ul>
+                  </div>
                 </div>
-                <!--Tab panes-->
-                <div class="tab-content">
-                  <div class="tab-pane fade show active" id="tabs-1-1">
-                    <div class="jp-modern jp-player-init">
-                      <div class="jp-jplayer"></div>
-                      <div class="jp-audio jp-audio-0" role="application" aria-label="media player">
-                        <ul class="jp-player-list">
-                          <li class="jp-player-list-item" data-jp-title="Lost Souls" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Outer Spirits" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Oldskool" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Reasons Why" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Inside Me" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Stars (feat. iTops)" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Hills of Truth" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Carelessness" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Into the Future" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                        </ul>
-                        <div class="jp-modern-interface">
-                          <div class="jp-button jp-playpaus-button">
-                            <button class="jp-btn jp-play" tabindex="0"></button>
-                          </div>
-                          <div class="jp-time-rail">
-                            <div class="jp-progress">
-                              <div class="jp-seek-bar">
-                                <div class="jp-play-bar"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="jp-current-time"></div>
-                          <div class="jp-button jp-volume-button">
-                            <button class="jp-btn jp-mute" tabindex="0">max volume</button>
-                          </div>
-                        </div>
-                        <div class="jp-playlist">
-                          <ul class="jp-playlist-inner">
-                            <li></li>
-                          </ul>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tabs-1-2">
+              <div class="jp-modern jp-player-init">
+                <div class="jp-jplayer"></div>
+                <div class="jp-audio jp-audio-1" role="application" aria-label="media player">
+                  <ul class="jp-player-list">
+                    <li class="jp-player-list-item" data-jp-title="Inside Me" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Stars (feat. iTops)" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Hills of Truth" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Carelessness" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Into the Future" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Lost Souls" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Oldskool" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Reasons Why" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                  </ul>
+                  <div class="jp-modern-interface">
+                    <div class="jp-button jp-playpaus-button">
+                      <button class="jp-btn jp-play" tabindex="0"></button>
+                    </div>
+                    <div class="jp-time-rail">
+                      <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                          <div class="jp-play-bar"></div>
                         </div>
                       </div>
+                    </div>
+                    <div class="jp-current-time"></div>
+                    <div class="jp-button jp-volume-button">
+                      <button class="jp-btn jp-mute" tabindex="0">max volume</button>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="tabs-1-2">
-                    <div class="jp-modern jp-player-init">
-                      <div class="jp-jplayer"></div>
-                      <div class="jp-audio jp-audio-1" role="application" aria-label="media player">
-                        <ul class="jp-player-list">
-                          <li class="jp-player-list-item" data-jp-title="Inside Me" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Stars (feat. iTops)" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Hills of Truth" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Carelessness" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Into the Future" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Lost Souls" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Oldskool" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Reasons Why" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                        </ul>
-                        <div class="jp-modern-interface">
-                          <div class="jp-button jp-playpaus-button">
-                            <button class="jp-btn jp-play" tabindex="0"></button>
-                          </div>
-                          <div class="jp-time-rail">
-                            <div class="jp-progress">
-                              <div class="jp-seek-bar">
-                                <div class="jp-play-bar"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="jp-current-time"></div>
-                          <div class="jp-button jp-volume-button">
-                            <button class="jp-btn jp-mute" tabindex="0">max volume</button>
-                          </div>
-                        </div>
-                        <div class="jp-playlist">
-                          <ul class="jp-playlist-inner">
-                            <li></li>
-                          </ul>
-                        </div>
-                        <div class="jp-modern-footer">
-                          <p>Like the album?</p>
-                          <ul class="jp-modern-linklist">
-                            <li><a href="#"><img src="images/itunes-21x21.png" alt="" width="21" height="10"/><span>iTunes</span></a></li>
-                            <li><a href="#"><img src="images/spotify-19x19.png" alt="" width="19" height="9"/><span>Spotify</span></a></li>
-                          </ul>
+                  <div class="jp-playlist">
+                    <ul class="jp-playlist-inner">
+                      <li></li>
+                    </ul>
+                  </div>
+                  <div class="jp-modern-footer">
+                    <p>Like the album?</p>
+                    <ul class="jp-modern-linklist">
+                      <li>
+                        <a href="#"><img src="images/itunes-21x21.png" alt="" width="21" height="10" /><span>iTunes</span></a>
+                      </li>
+                      <li>
+                        <a href="#"><img src="images/spotify-19x19.png" alt="" width="19" height="9" /><span>Spotify</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tabs-1-3">
+              <div class="jp-modern jp-player-init">
+                <div class="jp-jplayer"></div>
+                <div class="jp-audio jp-audio-2" role="application" aria-label="media player">
+                  <ul class="jp-player-list">
+                    <li class="jp-player-list-item" data-jp-title="Lost Souls" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Oldskool" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Reasons Why" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Inside Me" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Stars (feat. iTops)" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Hills of Truth" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Carelessness" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Into the Future" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                  </ul>
+                  <div class="jp-modern-interface">
+                    <div class="jp-button jp-playpaus-button">
+                      <button class="jp-btn jp-play" tabindex="0"></button>
+                    </div>
+                    <div class="jp-time-rail">
+                      <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                          <div class="jp-play-bar"></div>
                         </div>
                       </div>
+                    </div>
+                    <div class="jp-current-time"></div>
+                    <div class="jp-button jp-volume-button">
+                      <button class="jp-btn jp-mute" tabindex="0">max volume</button>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="tabs-1-3">
-                    <div class="jp-modern jp-player-init">
-                      <div class="jp-jplayer"></div>
-                      <div class="jp-audio jp-audio-2" role="application" aria-label="media player">
-                        <ul class="jp-player-list">
-                          <li class="jp-player-list-item" data-jp-title="Lost Souls" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Oldskool" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Reasons Why" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Inside Me" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Stars (feat. iTops)" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Hills of Truth" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Carelessness" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Into the Future" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                        </ul>
-                        <div class="jp-modern-interface">
-                          <div class="jp-button jp-playpaus-button">
-                            <button class="jp-btn jp-play" tabindex="0"></button>
-                          </div>
-                          <div class="jp-time-rail">
-                            <div class="jp-progress">
-                              <div class="jp-seek-bar">
-                                <div class="jp-play-bar"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="jp-current-time"></div>
-                          <div class="jp-button jp-volume-button">
-                            <button class="jp-btn jp-mute" tabindex="0">max volume</button>
-                          </div>
-                        </div>
-                        <div class="jp-playlist">
-                          <ul class="jp-playlist-inner">
-                            <li></li>
-                          </ul>
-                        </div>
-                        <div class="jp-modern-footer">
-                          <p>Like the album?</p>
-                          <ul class="jp-modern-linklist">
-                            <li><a href="#"><img src="images/itunes-21x21.png" alt="" width="21" height="10"/><span>iTunes</span></a></li>
-                            <li><a href="#"><img src="images/spotify-19x19.png" alt="" width="19" height="9"/><span>Spotify</span></a></li>
-                          </ul>
+                  <div class="jp-playlist">
+                    <ul class="jp-playlist-inner">
+                      <li></li>
+                    </ul>
+                  </div>
+                  <div class="jp-modern-footer">
+                    <p>Like the album?</p>
+                    <ul class="jp-modern-linklist">
+                      <li>
+                        <a href="#"><img src="images/itunes-21x21.png" alt="" width="21" height="10" /><span>iTunes</span></a>
+                      </li>
+                      <li>
+                        <a href="#"><img src="images/spotify-19x19.png" alt="" width="19" height="9" /><span>Spotify</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tabs-1-4">
+              <div class="jp-modern jp-player-init">
+                <div class="jp-jplayer"></div>
+                <div class="jp-audio jp-audio-3" role="application" aria-label="media player">
+                  <ul class="jp-player-list">
+                    <li class="jp-player-list-item" data-jp-title="Inside Me" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Stars (feat. iTops)" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Hills of Truth" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Carelessness" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Into the Future" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Lost Souls" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Oldskool" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
+                    <li class="jp-player-list-item" data-jp-title="Reasons Why" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
+                  </ul>
+                  <div class="jp-modern-interface">
+                    <div class="jp-button jp-playpaus-button">
+                      <button class="jp-btn jp-play" tabindex="0"></button>
+                    </div>
+                    <div class="jp-time-rail">
+                      <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                          <div class="jp-play-bar"></div>
                         </div>
                       </div>
+                    </div>
+                    <div class="jp-current-time"></div>
+                    <div class="jp-button jp-volume-button">
+                      <button class="jp-btn jp-mute" tabindex="0">max volume</button>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="tabs-1-4">
-                    <div class="jp-modern jp-player-init">
-                      <div class="jp-jplayer"></div>
-                      <div class="jp-audio jp-audio-3" role="application" aria-label="media player">
-                        <ul class="jp-player-list">
-                          <li class="jp-player-list-item" data-jp-title="Inside Me" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Stars (feat. iTops)" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Hills of Truth" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Carelessness" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Into the Future" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Lost Souls" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Subatomic" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Oldskool" data-jp-mp3="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Reasons Why" data-jp-mp3="http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"></li>
-                        </ul>
-                        <div class="jp-modern-interface">
-                          <div class="jp-button jp-playpaus-button">
-                            <button class="jp-btn jp-play" tabindex="0"></button>
-                          </div>
-                          <div class="jp-time-rail">
-                            <div class="jp-progress">
-                              <div class="jp-seek-bar">
-                                <div class="jp-play-bar"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="jp-current-time"></div>
-                          <div class="jp-button jp-volume-button">
-                            <button class="jp-btn jp-mute" tabindex="0">max volume</button>
-                          </div>
-                        </div>
-                        <div class="jp-playlist">
-                          <ul class="jp-playlist-inner">
-                            <li></li>
-                          </ul>
-                        </div>
-                        <div class="jp-modern-footer">
-                          <p>Like the album?</p>
-                          <ul class="jp-modern-linklist">
-                            <li><a href="#"><img src="images/itunes-21x21.png" alt="" width="21" height="10"/><span>iTunes</span></a></li>
-                            <li><a href="#"><img src="images/spotify-19x19.png" alt="" width="19" height="9"/><span>Spotify
-</span></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="jp-playlist">
+                    <ul class="jp-playlist-inner">
+                      <li></li>
+                    </ul>
+                  </div>
+                  <div class="jp-modern-footer">
+                    <p>Like the album?</p>
+                    <ul class="jp-modern-linklist">
+                      <li>
+                        <a href="#"><img src="images/itunes-21x21.png" alt="" width="21" height="10" /><span>iTunes</span></a>
+                      </li>
+                      <li>
+                        <a href="#"><img src="images/spotify-19x19.png" alt="" width="19" height="9" /><span>Spotify </span></a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      {% endblock %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

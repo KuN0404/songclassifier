@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import re
 import joblib
 from datetime import datetime
@@ -40,6 +40,9 @@ def prediction():
         cleaned_lyrics = clean_lyrics(lyrics)  # Filterisasi lirik
         prediction = model.predict([cleaned_lyrics])  # Prediksi genre
         genre = prediction[0]  # Ambil hasil prediksi pertama
+
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify({'genre': genre, 'lyrics': lyrics, 'clean_lyrics': cleaned_lyrics})
 
     return render_template('prediction.html', genre=genre, lyrics=lyrics, clean_lyrics=cleaned_lyrics)
 

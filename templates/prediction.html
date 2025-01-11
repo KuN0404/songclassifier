@@ -13,7 +13,10 @@
     <div class="row">
       <div class="col-lg-6 col-md-8 col-sm-10">
         <h3>Prediction details</h3>
-        <p class="text-gray-600">The song genre prediction is generated based on the lyrics. By entering the lyrics, the system will display the corresponding genre. For more accurate results, it is recommended to enter the complete lyrics. Please enter the lyrics below.</p>
+        <p class="text-gray-600">
+          The song genre prediction is generated based on the lyrics. By entering the lyrics, the system will display the corresponding genre. For more accurate results, it is recommended to enter the complete lyrics. Please enter the
+          lyrics below.
+        </p>
       </div>
     </div>
   </div>
@@ -22,7 +25,7 @@
 <!--Mailform-->
 <section class="section section-lg bg-default">
   <div class="container">
-    <form class="rd-form text-left" method="POST" action="{{ url_for('prediction') }}">
+    <form class="rd-form text-left" method="POST" action="{{ url_for('prediction') }}" id="prediction-form">
       <div class="row row-40">
         <div class="col-lg-12">
           <div class="form-wrap">
@@ -40,8 +43,7 @@
   </div>
 </section>
 
-{% if lyrics or genre %}
-<section class="section section-lg bg-default">
+<section class="section section-lg bg-default" id="result-section" style="display: none">
   <div class="container">
     <div class="row row-50">
       <div class="col-lg-10 col-xl-11">
@@ -53,12 +55,10 @@
               <path
                 d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
             </svg>
-            {% if lyrics %}
             <div class="quote-primary-text">
               <h4>Input Lyrics:</h4>
-              <p class="q">{{ lyrics }}</p>
+              <p class="q" id="input-lyrics"></p>
             </div>
-            {% endif %}
           </div>
         </article>
       </div>
@@ -70,12 +70,10 @@
               <path
                 d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
             </svg>
-            {% if lyrics %}
             <div class="quote-primary-text">
               <h4>Cleaned Lyrics:</h4>
-              <p class="q">{{ clean_lyrics }}</p>
+              <p class="q" id="cleaned-lyrics"></p>
             </div>
-            {% endif %}
           </div>
         </article>
       </div>
@@ -87,16 +85,44 @@
               <path
                 d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
             </svg>
-            {% if genre %}
             <div class="quote-primary-text">
               <h4>Prediction Result:</h4>
-              <h3 class="q"><strong>Genre:</strong> {{ genre }}</h3>
+              <h3 class="q"><strong>Genre:</strong> <span id="predicted-genre"></span></h3>
             </div>
-            {% endif %}
           </div>
         </article>
       </div>
     </div>
   </div>
 </section>
-{% endif %}{% endblock %}
+
+<script>
+  document.getElementById('prediction-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch(this.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // console.log('Success:', data);
+        document.getElementById('input-lyrics').textContent = data.lyrics;
+        document.getElementById('cleaned-lyrics').textContent = data.clean_lyrics;
+        document.getElementById('predicted-genre').textContent = data.genre;
+        document.getElementById('result-section').style.display = 'block';
+      })
+      .catch((error) => {
+        // console.error('Error:', error);
+      });
+  });
+</script>
+{% endblock %}
