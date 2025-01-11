@@ -17,3 +17,5 @@ Web ini dibuat untuk memprediksi genre sebuah lagu berdasarkan lirik lagu
 3. Jalankan Python
     ```bash
     python app.py
+
+MIT License
