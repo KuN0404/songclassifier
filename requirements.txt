@@ -1,25 +1,8 @@
 Flask==2.3.3
-# Data Processing
 numpy==1.23.5
 pandas==1.5.3
 scikit-learn==1.2.0
-imblearn==0.0  # Merujuk ke `imblearn`, instal library berikut:
+imblearn==0.0
 imbalanced-learn==0.10.1
-
-# NLP Libraries
-nltk==3.8.1
-wordcloud==1.9.1
-
-# Visualization
-matplotlib==3.6.2
-seaborn==0.12.1
-
-# Model Saving and Loading
 joblib==1.2.0
-
-# Torch & Transformers
-torch==2.0.0
-transformers==4.33.0
-
-# HTTP Requests
 requests==2.28.1
